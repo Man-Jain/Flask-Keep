@@ -8,9 +8,6 @@ class Note(Resource):
 	def get(self):
 		dicti = {}
 		notes = Notes.query.all()
-		for a in notes:
-			dicti[a] = [a.note_id, a.title, a.description]
-
-		return dicti
+		return {'notes':notes.title}
 
 rest.add_resource(Note, '/notes')
