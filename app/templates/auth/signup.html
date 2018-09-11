@@ -1,3 +1,4 @@
+{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,21 +41,14 @@
 			        <div class="alert_notadded">Wrong Passwords</div>
 			            <div class="content-wrap">
 			            <h6>Sign Up</h6>
-			            <form action="/fbsignup" method="POST" id="sign-up-form" >
-			               	<input name="email_id" class="form-control" type="text" placeholder="Email ID">
-			                <input name="passwd" class="form-control" type="password" placeholder="Password">
-			                <input name="user-group" class="form-control" type="text" placeholder="Group Name
-			                ">
-			             	<input name="user-name" class="form-control" type="text" placeholder="Username">
-			                <button class="btn btn-primary signup" type="submit">Submit</button>
-			            	</form>
+			            {{ wtf.quick_form(form) }}
 			                </div>                
 			            </div>
 			        </div>
 
 			        <div class="already">
 			            <p>Have an account already?</p>
-			            <a href="{{ url_for('signin') }}">Login</a>
+			            <a href="{{ url_for('auth.signup') }}">Login</a>
 			        </div>
 			    </div>
 			</div>

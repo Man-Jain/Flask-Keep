@@ -42,7 +42,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return '<User: {}>'.format(self.username)
+        return '<User: {}>'.format(username)
 
 
 # Set up user_loader
@@ -60,5 +60,5 @@ class Notes(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     # Notes will have a id of user as its foreign key.
 
-    def __repr__():
-        return '<Note: {}>'.format(self.title)
+    def __repr__(self):
+        return '<Note: {}>'.format(title)

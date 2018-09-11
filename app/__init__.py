@@ -19,6 +19,7 @@ def create_app(config_name):
     migrate = Migrate(app, db)
     Bootstrap(app)
 
+
     from app import models
 
     from .user import user as user_blueprint
@@ -26,7 +27,10 @@ def create_app(config_name):
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
-    
+
+    from .api import api as api_blueprint
+    app.register_blueprint(api_blueprint, url_prefix = '/api')
+
     return app
 
 #from app import routes, models

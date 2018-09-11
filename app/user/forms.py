@@ -8,4 +8,3 @@ class NotesForm(FlaskForm):
 	title = StringField('Title', validators=[DataRequired()])
 	description = StringField('Description', validators=[DataRequired()])
 	submit = SubmitField('Create Note')
-	user_id = current_user.id
